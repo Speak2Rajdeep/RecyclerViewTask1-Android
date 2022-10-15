@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RecyclerViewTask</string>
+    <string name="demo_text_str">Demo Text</string>
+</resources>
