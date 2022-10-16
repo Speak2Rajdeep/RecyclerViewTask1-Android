@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
         rcv = (RecyclerView) findViewById(R.id.rclview);
 
-        //Setting a Laypout manager as Linear layout
+        //Setting a Layout manager as Linear layout
         rcv.setLayoutManager(new LinearLayoutManager(this));
 
         //Putting data into array
@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //Sending the data to Adapter Class
-        rcv.setAdapter(new MyAdapter(arr));
+
+        rcv.setAdapter(new MyAdapter(arr,getApplicationContext()));
     }
 }
