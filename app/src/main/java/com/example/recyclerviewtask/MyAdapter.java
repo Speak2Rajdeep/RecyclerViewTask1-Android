@@ -36,15 +36,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
         holder.tv.setText(data[position]);
-
-
     }
 
     @Override
     public int getItemCount() {
         return data.length;
     }
-
 
 
     class Holder extends RecyclerView.ViewHolder implements View.OnClickListener {

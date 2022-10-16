@@ -23,12 +23,10 @@ public class MainActivity extends AppCompatActivity {
         String arr[] = new String[100];
 
         for(int i =0;i<arr.length;i++) {
-
             arr[i] = "Demo Text " + (i+1) ;
         }
 
         //Sending the data to Adapter Class
-
         rcv.setAdapter(new MyAdapter(arr,getApplicationContext()));
     }
 }
