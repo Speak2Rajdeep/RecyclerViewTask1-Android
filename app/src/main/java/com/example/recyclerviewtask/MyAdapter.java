@@ -18,17 +18,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
     Context context;
 
     //Passing the data through Constructor
-    public MyAdapter(String[] data,Context context) {
+    public MyAdapter(String[] data, Context context) {
         this.context = context;
         this.data = data;
     }
 
-    @NonNull
     //Creates a view and patches it with the Holder Class
+    @NonNull
     @Override
     public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.singlerow,parent,false);
+        View view = inflater.inflate(R.layout.singlerow, parent, false);
         return new Holder(view);
     }
 
@@ -56,15 +56,19 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.Holder> {
             itemView.setOnClickListener(this);
         }
 
+        //Sets onClickListener from RecyclerView and passes the data to next Activity through Intent
         @Override
         public void onClick(View view) {
             int position = getAbsoluteAdapterPosition();
-            Toast.makeText(img.getContext(), "You have Clicked on Position : " + (position+1), Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(context.getApplicationContext(),DescriptionActivity.class);
-            intent.putExtra("image",R.drawable.smile2);
-            intent.putExtra("text",tv.getText());
+            Toast.makeText(view.getContext(), "You have Clicked on Item Position : " + (position + 1), Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(view.getContext(), DescriptionActivity.class);
+            intent.putExtra("image", R.drawable.smile2);
+            intent.putExtra("text", tv.getText());
+            /*
+            Needed If We want to pass the ApplicationContext --->
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(intent);
+            */
+            view.getContext().startActivity(intent);
         }
     }
 }

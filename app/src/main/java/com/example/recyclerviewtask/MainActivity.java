@@ -9,6 +9,7 @@ import android.os.Bundle;
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView rcv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,13 +21,13 @@ public class MainActivity extends AppCompatActivity {
         rcv.setLayoutManager(new LinearLayoutManager(this));
 
         //Putting data into array
-        String arr[] = new String[100];
+        String[] arr = new String[100];
 
-        for(int i =0;i<arr.length;i++) {
-            arr[i] = "Demo Text " + (i+1) ;
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = "Demo Text " + (i + 1);
         }
 
         //Sending the data to Adapter Class
-        rcv.setAdapter(new MyAdapter(arr,getApplicationContext()));
+        rcv.setAdapter(new MyAdapter(arr, getApplicationContext()));
     }
 }
